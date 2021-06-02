@@ -1,0 +1,28 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navbars",
+  "info": {
+    "name": "navbar",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "link": {
+      "type": "string"
+    },
+    "photo_blogs": {
+      "collection": "photo-blog",
+      "via": "navbars",
+      "dominant": true
+    },
+    "links": {
+      "via": "navbars",
+      "collection": "link"
+    }
+  }
+}

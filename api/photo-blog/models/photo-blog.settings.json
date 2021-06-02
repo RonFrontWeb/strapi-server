@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "photo_blogs",
+  "info": {
+    "name": "photo Blog",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": false
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "images": {
+      "via": "photo_blogs",
+      "collection": "image"
+    },
+    "navbars": {
+      "via": "photo_blogs",
+      "collection": "navbar"
+    }
+  }
+}
